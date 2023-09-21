@@ -44,3 +44,7 @@ install_tools.bat
 ```sh
 setpath.bat
 ```
+![](image/Visual%20Studio%20Installer_0.png)
+![](image/Visual%20Studio%20Installer_1.png)
+
+push modify button
