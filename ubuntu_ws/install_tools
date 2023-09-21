@@ -1,0 +1,6 @@
+# Install essential tools to use RaspberryPi SDK. 
+apt-get -y install build-essential cmake make git 
+
+# Install arm cross development tool chain
+apt-get -y install gcc-arm-none-eabi libnewlib-arm-none-eabi
+
