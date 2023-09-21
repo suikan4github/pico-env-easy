@@ -1,0 +1,14 @@
+# Install essential tools to use RaspberryPi SDK. 
+apt-get -y install build-essential cmake make git 
+
+# Install arm cross development tool chain
+apt-get -y install gcc-arm-none-eabi libnewlib-arm-none-eabi
+
+# Install VS Code. 
+# Using curl to get the newest version of the VSCODE.deb.
+# The download file is located inside /tmp as ramdom name
+# to avoid the corrision of name. 
+apt-get install curl
+temp_deb=$(mktemp --suffix=.deb /tmp/vscodeXXXXXXXX)
+curl -L https://go.microsoft.com/fwlink/?LinkID=760868 -o ${temp_deb}
+apt-get install ${temp_deb}
