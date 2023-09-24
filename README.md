@@ -17,6 +17,9 @@ Ubuntu用のスクリプトは、ビルドに必要なツールの他にVS Code�
 インストールします。すでにVS Codeの最新.deb版がある場合にはインストールされません。
 最新版でない場合には最新版にアップデートされます。
 
+
+VS Codeをインストールしたら起動して[C/C++ Extention Pack](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools-extension-pack)を拡張機能としてインストールしておいてください。
+
 VS Codeをインストールしたくない場合は、スクリプトの当該セクションをコメントアウトしてください。
 ```sh
 cd ubuntu
@@ -28,7 +31,9 @@ sudo ./install_tools
 Ubuntu用のスクリプトは、ビルドに必要なツールをインストールします。これらのツールは
 ubuntu版と共通です。
 
-VS CodeはインストールしませんのでWSLのホストであるWindowsにインストールしてください。
+VS CodeはWSL側にはインストールしませんのでWSLのホストであるWindowsにインストールしてください。
+
+VS Codeをインストールしたら起動して[C/C++ Extention Pack](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools-extension-pack)を拡張機能としてインストールしておいてください。
 
 ```sh
 cd ubuntu_wsl
