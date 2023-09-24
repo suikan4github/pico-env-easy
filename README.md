@@ -1,7 +1,7 @@
 # pico-env-easy
 Setting Up RaspberryPi Pico SDK easily
 
-# Details
+# 詳細
 RaspberryPi Picoの開発のための環境を簡単に設定するためのスクリプトです。
 
 以下の環境で試験しています
@@ -9,7 +9,7 @@ RaspberryPi Picoの開発のための環境を簡単に設定するためのス�
 - Ubuntu 22.04 LTS
 - Ubuntu 22.04 LTS on WSL
 
-# How to use
+# インストールの仕方
 OSごとのディレクトリに移動してスクリプトを実行します。
 
 ## Ubuntu
@@ -28,23 +28,15 @@ sudo ./install_tools
 Ubuntu用のスクリプトは、ビルドに必要なツールをインストールします。これらのツールは
 ubuntu版と共通です。
 
-VS Codeはインストールしません。
+VS CodeはインストールしませんのでWSLのホストであるWindowsにインストールしてください。
 
 ```sh
 cd ubuntu_wsl
 sudo ./install_tools
 ```
 
-## Windows
-```sh
-cd windows
-install_tools.bat
-```
+# Windows
+Windows用の開発ツールインストールはRaspberry Pi公式サイトが配布していますのでそちらを使ってください。
 
-```sh
-setpath.bat
-```
-![](image/Visual%20Studio%20Installer_0.png)
-![](image/Visual%20Studio%20Installer_1.png)
+- [Raspberry Pi Pico Windows Installer](https://www.raspberrypi.com/news/raspberry-pi-pico-windows-installer/)
 
-push modify button
