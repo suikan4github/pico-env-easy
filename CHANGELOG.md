@@ -5,6 +5,8 @@ Record of the modification in project development.
 
 ### Added
 ### Changed
+[Issue 2](https://github.com/suikan4github/pico-env-easy/issues/2) : ninja-buildのパッケージ名が間違っている
+
 ### Deprecated
 ### Removed
 ### Fixed
