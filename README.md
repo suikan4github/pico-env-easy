@@ -9,6 +9,8 @@ RaspberryPi Picoの開発のための環境を簡単に設定するためのス�
 - Ubuntu 22.04 LTS
 - Ubuntu 22.04 LTS on WSL
 
+なお、必須ツールに加えてgitとdoxygenもインストールしています。
+
 # インストールの仕方
 OSごとのディレクトリに移動してスクリプトを実行します。
 
@@ -45,3 +47,17 @@ Windows用の開発ツールインストールはRaspberry Pi公式サイトが�
 
 - [Raspberry Pi Pico Windows Installer](https://www.raspberrypi.com/news/raspberry-pi-pico-windows-installer/)
 
+追加のgitとdoxygenをインストールするには以下のバッチファイルを実行してください。
+
+```sh
+cd windows
+sudo ./install_tools.bat
+```
+
+残念ながらこのインストーラーを実行しただけではプログラムへのパスを設定できないため、コマンドラインからプログラムを実行できません。
+パスを設定するには続けて以下のバッチファイルを実行してください。
+
+```sh
+sudo ./setpath.bat
+```
+注意：パスを設定するバッチファイルは1度しか実行してはいけません。複数回実行するとその都度システムのパスが伸びていきます。
