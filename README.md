@@ -42,22 +42,56 @@ cd ubuntu_wsl
 sudo ./install_tools
 ```
 
-# Windows
+## Windows
 Windows用の開発ツールインストールはRaspberry Pi公式サイトが配布していますのでそちらを使ってください。
 
 - [Raspberry Pi Pico Windows Installer](https://www.raspberrypi.com/news/raspberry-pi-pico-windows-installer/)
 
-追加のgitとdoxygenをインストールするには以下のバッチファイルを実行してください。
+ビルド以外に使うツールは[MSYS2](https://www.msys2.org/)を利用します。
 
-```sh
-cd windows
-sudo ./install_tools.bat
+### MSYS2の環境変数の設定
+MSYS2をインストールするには、まず環境変数を設定します。
+[Windowsキー]を押した後"env"と入力し、「環境変数を編集」を選択します。
+![](image/env_var.png)
+
+環境変数の編集ダイアログが現れますので、以下の変数を追加してください。
+
+環境変数 | 値
+--------|-------
+HOME | %USERPROFILE%
+LC_CTYPE | ja_JP.UTF-8
+PATH     | C:\msys64\usr\bin
+PATH | C:\msys64\mingw64\bin
+
+"%USERPROFILE%"はWindowsによって自動的にユーザーのプロファイル・ディレクトリに置き換えられます。
+
+PATHが2回現れています。PATH変数は最初から存在しますので、その中に2項目追加してください。追加すると以下の図のようになります。
+
+![](image/path_env.png)
+
+環境変数の設定が終わったら、コマンド・プロンプト・ウインドウを閉じて開きなおしてください。これで環境変数の設定が反映されます。試しに以下の二つのコマンドをコマンド・プロンプト・ウインドウをから実行してみてください。
+ 
+```
+echo %USERPROFILE%
+echo %HOME%
 ```
 
-残念ながらこのインストーラーを実行しただけではプログラムへのパスを設定できないため、コマンドラインからプログラムを実行できません。
-パスを設定するには続けて以下のバッチファイルを実行してください。
+結果が同じなら、設定が正しく反映されています。
 
-```sh
-sudo ./setpath.bat
+
+なお、環境変数を変更せずに利用時に[windows/set_env.bat](windows/set_env.bat)を都度実行しても構いません。
+
+```cmd
+set_env.bat
 ```
-注意：パスを設定するバッチファイルは1度しか実行してはいけません。複数回実行するとその都度システムのパスが伸びていきます。
+
+注意：パスを設定するバッチファイルは1度しか実行してはいけません。複数回実行するとその都度のPATH変数の値が伸びていきます。
+
+### MSYS2のインストール
+環境変数の設定が終わったら、Windowsのコマンド・プロンプト・ウインドウから以下のコマンドを実行してMSYS2をインストールします。
+
+```cmd
+winget install MSYS2.MSYS2
+```
+
+実行が終了したら、インストールが成功したかどうかを確かめます。
