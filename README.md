@@ -100,7 +100,7 @@ winget install MSYS2.MSYS2
 pacman -Syu
 ```
 
-これでパッケージ情報が更新されます。最後に、この本で紹介する便利なツールもインストールしておきましょう。
+これでパッケージ情報が更新されます。最後に、よく使う便利なツールもインストールしておきましょう。
 
 ```cmd
 pacman -S git cmake doxygen ninja
