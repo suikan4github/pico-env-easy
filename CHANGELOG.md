@@ -22,6 +22,9 @@ Record of the modification in project development.
 ### Removed
 ### Fixed
 
+## [v1.1.0]
+## [v1.0.0]
+
 
 [Unreleased]: https://github.com/suikan4github/murasaki/compare/v1.2.0...develop
 [v1.2.0]: https://github.com/suikan4github/murasaki/compare/v1.2.0...v1.1.0
