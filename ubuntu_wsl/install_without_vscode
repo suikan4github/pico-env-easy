@@ -1,5 +1,16 @@
 #! /bin/sh
 
+#######################################################################
+#
+# Check install condtion 
+#
+if  [ `id -u` -ne 0 ] ; then
+  # Only root can run this. 
+  echo "ERROR : Please run as root. ex: sudo ./install_tools"
+  exit 1
+fi
+
+
 # Update repository before installing. 
 apt-get -y update
 

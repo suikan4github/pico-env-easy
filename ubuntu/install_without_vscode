@@ -6,7 +6,7 @@
 #
 if  [ `id -u` -ne 0 ] ; then
   # Only root can run this. 
-  echo "ERROR : Please run as root. ex: sudo ./install_tools"
+  echo "ERROR : Please run as root. ex: sudo ./install_without_vscode"
   exit 1
 fi
 
@@ -19,11 +19,3 @@ apt-get -y install build-essential cmake ninja-build git doxygen
 # Install arm cross development tool chain
 apt-get -y install gcc-arm-none-eabi libnewlib-arm-none-eabi
 
-# Install VS Code. 
-# Using curl to get the newest version of the VSCODE.deb.
-# The download file is located inside /tmp as ramdom name
-# to avoid the corrision of name. 
-apt-get -y install curl
-temp_deb=$(mktemp --suffix=.deb /tmp/vscode.XXXXXXXX)
-curl -L https://go.microsoft.com/fwlink/?LinkID=760868 -o ${temp_deb}
-apt-get -y install ${temp_deb}
