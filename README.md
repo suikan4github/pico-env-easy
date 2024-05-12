@@ -16,18 +16,22 @@ OSごとのディレクトリに移動してスクリプトを実行します。
 
 ## Ubuntu
 Ubuntu用のスクリプトは、ビルドに必要なツールの他にVS Codeの.deb版をダウンロードして
-インストールします。すでにVS Codeの最新.deb版がある場合にはインストールされません。
-最新版でない場合には最新版にアップデートされます。
+インストールします。
 
 
-VS Codeをインストールしたら起動して[C/C++ Extention Pack](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools-extension-pack)を拡張機能としてインストールしておいてください。
-
-VS Codeをインストールしたくない場合は、スクリプトの当該セクションをコメントアウトしてください。
 ```sh
 cd ubuntu
 sudo ./install_tools
 ```
 
+すでにVS Codeをインストール済みの場合は、VSCをインストールしないスクリプトを実行してください。
+
+```sh
+cd ubuntu
+sudo ./install_without_vscode
+```
+
+VS Codeをインストールしたら起動して[C/C++ Extention Pack](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools-extension-pack)を拡張機能としてインストールしておいてください。
 
 ## Ubuntu on WSL
 Ubuntu用のスクリプトは、ビルドに必要なツールをインストールします。これらのツールは
@@ -39,7 +43,7 @@ VS Codeをインストールしたら起動して[C/C++ Extention Pack](https://
 
 ```sh
 cd ubuntu_wsl
-sudo ./install_tools
+sudo ./install_without_vscode
 ```
 
 ## Windows
@@ -103,6 +107,14 @@ pacman -Syu
 これでパッケージ情報が更新されます。最後に、よく使う便利なツールもインストールしておきましょう。
 
 ```cmd
-pacman -S git cmake doxygen ninja
+pacman -S git doxygen
 ```
 
+### Visual Studioの実行
+Windows版の開発環境を実行するときには、スタートメニューから"Pico - Visual Studio Code"を実行してください（下図）。
+
+このメニューではなく通常のVisual Studio Codeを開くと正しくパスが設定されないため、プログラムをビルドできません。
+なお、[Raspberry Pi Pico Windows Installer](https://www.raspberrypi.com/news/raspberry-pi-pico-windows-installer/)にはVisual StudioのC/C++ Buildツールが含まれています。
+ですので、"Pico - Visual Studio Code"を使えばCMakeを使ってWindowsのCLIプログラムも開発することができます。
+
+![](image/pico-menu.png)
